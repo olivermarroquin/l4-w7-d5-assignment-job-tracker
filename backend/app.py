@@ -8,11 +8,14 @@ from supabase import Client, create_client
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5174", "http://127.0.0.1:5174"])
+
+origin = os.environ["ORIGIN"]
+
+CORS(app, origins=[origin])
 
 supabase: Client = create_client(
-    os.environ.get("SUPABASE_URL"),
-    os.environ.get("SUPABASE_KEY")
+    os.environ["SUPABASE_URL"],
+    os.environ["SUPABASE_KEY"]
 )
 
 ALLOWED_STATUSES = [
@@ -112,4 +115,4 @@ def delete_job(job_id):
     return {"message": "Job deleted successfully"}, 200
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5002)
