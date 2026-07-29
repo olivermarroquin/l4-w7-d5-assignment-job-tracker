@@ -21,11 +21,3 @@ https://d26godvv8m80ky.cloudfront.net
 Backend API (Flask + Render)
 
 https://l4-w7-d5-assignment-job-tracker.onrender.com
-
-## Frontend Hosting
-
-The frontend is built with React and Vite and is hosted on Amazon S3 with Amazon CloudFront.
-
-## Backend Hosting
-
-The backend is built with Flask and Gunicorn and is hosted on Render.
